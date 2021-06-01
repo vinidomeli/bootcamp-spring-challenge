@@ -8,6 +8,6 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:spring_challenge
-    username: sa
-    password: sa
+    url: jdbc:connection:string
+    username: user
+    password: pass

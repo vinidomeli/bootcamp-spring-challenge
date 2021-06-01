@@ -146,3 +146,6 @@ gradle-app.setting
 
 ### Gradle Patch ###
 **/build/
+
+### Application yml ###
+application.yml
