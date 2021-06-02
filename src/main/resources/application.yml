@@ -1,13 +1,12 @@
 spring:
+  jackson:
+    default-property-inclusion: non_null
   jpa:
-    properties:
-      hibernate:
-        globally_quoted_identifiers: true
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:spring_challenge
+    url: jdbc:h2:file:./db/spring-challenge.db
     username: sa
     password: sa
