@@ -149,3 +149,6 @@ gradle-app.setting
 
 ### Application yml ###
 application.yml
+
+# DB temp #
+db/spring-challenge.db.mv.db
