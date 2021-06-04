@@ -15,12 +15,15 @@ import java.io.Serializable;
 @Table(name = "product")
 public class ProductEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity userId;
+
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "type", nullable = false)
     private String type;
