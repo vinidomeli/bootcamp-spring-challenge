@@ -1,0 +1,3 @@
+2021-06-04 13:22:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NAME VARCHAR(30)": "'Teclado Hyperx Alloy Origins Core' (33)"; SQL statement:
+insert into product (id, brand, category_id, color, name, notes, type, user_id) values (null, ?, ?, ?, ?, ?, ?, ?) [22001-200]

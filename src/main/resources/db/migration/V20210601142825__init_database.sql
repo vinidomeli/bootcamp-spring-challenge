@@ -20,7 +20,6 @@ CREATE TABLE product
 (
     id          INT         NOT NULL AUTO_INCREMENT,
     user_id     VARCHAR(33) NOT NULL,
-    alias       VARCHAR(20) NOT NULL,
     name        VARCHAR(30) NOT NULL,
     type        VARCHAR(20) NOT NULL,
     brand       VARCHAR(20) NOT NULL,
