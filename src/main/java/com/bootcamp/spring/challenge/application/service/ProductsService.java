@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ProductsService implements ProductUseCase {
@@ -39,5 +41,36 @@ public class ProductsService implements ProductUseCase {
         });
 
         return responseDTOList;
+    }
+
+    @Override
+    public ProductEntity getProductById(final Integer productId) {
+        if (exists(productId)) {
+            final Optional<ProductEntity> response = productRepository.findById(productId);
+            return response.get();
+        }
+
+        return new ProductEntity();
+    }
+
+    protected boolean userOwnsTheProduct(final UUID userID, final Integer productId) {
+        final Optional<ProductEntity> productEntity = productRepository.findById(productId);
+
+        if (productEntity.isPresent()) {
+            final UUID productOwnerId = productEntity
+                    .get()
+                    .getUserId()
+                    .getId();
+
+            return userID.equals(productOwnerId);
+        }
+
+        return false;
+    }
+
+    protected boolean exists(final Integer productId) {
+        final Optional<ProductEntity> product = productRepository.findById(productId);
+
+        return product.isPresent();
     }
 }

@@ -111,13 +111,13 @@ public class FollowService implements FollowUseCase {
 
         final String username = userRepository.findUsernameById(userId);
 
-        final List<UserResponseDTO> followers = new ArrayList<>();
+        final List<UserResponseDTO> following = new ArrayList<>();
 
         followingList.forEach(entity -> {
             final UUID followerID = entity.getTargetUser().getId();
             final String followerUsername = userRepository.findUsernameById(followerID);
 
-            followers.add(UserResponseDTO.builder()
+            following.add(UserResponseDTO.builder()
                     .id(followerID)
                     .username(followerUsername)
                     .build());
@@ -127,8 +127,22 @@ public class FollowService implements FollowUseCase {
                 .username(username)
                 .totalFollowing(followingList.size())
                 .userId(userId)
-                .following(followers)
+                .following(following)
                 .build();
+    }
+
+    protected List<UUID> followingIdsByUser(final UUID userId) {
+        final List<ActivityFollowsEntity> followingList = followRepository.findAllBySourceUserId(userId);
+
+        final List<UUID> following = new ArrayList<>();
+
+        followingList.forEach(entity -> {
+            final UUID followerID = entity.getTargetUser().getId();
+
+            following.add(followerID);
+        });
+
+        return following;
     }
 
     private boolean alreadyFollowed(final FollowRequestDTO requestDTO) {
