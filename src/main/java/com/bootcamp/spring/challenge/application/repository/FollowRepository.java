@@ -1,6 +1,7 @@
 package com.bootcamp.spring.challenge.application.repository;
 
 import com.bootcamp.spring.challenge.domain.entity.activity.ActivityFollowsEntity;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -17,6 +18,10 @@ public interface FollowRepository extends JpaRepository<ActivityFollowsEntity, U
     public List<ActivityFollowsEntity> findAllBySourceUserId(UUID sourceUserId);
 
     public List<ActivityFollowsEntity> findAllByTargetUserId(UUID sourceUserId);
+
+    public List<ActivityFollowsEntity> findAllBySourceUserId(UUID sourceUserId, Pageable pageable);
+
+    public List<ActivityFollowsEntity> findAllByTargetUserId(UUID sourceUserId, Pageable pageable);
 
     public Integer deleteBySourceUserIdAndTargetUserId(UUID sourceUser, UUID targetUser);
 }

@@ -11,6 +11,7 @@ import com.bootcamp.spring.challenge.domain.entity.activity.ActivityFollowsEntit
 import com.bootcamp.spring.challenge.domain.entity.user.UserEntity;
 import com.bootcamp.spring.challenge.domain.enumeration.UserType;
 import com.bootcamp.spring.challenge.domain.exceptions.UserAlreadyFollowedException;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -80,8 +81,8 @@ public class FollowService implements FollowUseCase {
     }
 
     @Override
-    public FollowReportDTO listFollowers(final UUID userId) {
-        final List<ActivityFollowsEntity> followedByList = followRepository.findAllByTargetUserId(userId);
+    public FollowReportDTO listFollowers(final UUID userId, final Pageable pageable) {
+        final List<ActivityFollowsEntity> followedByList = followRepository.findAllByTargetUserId(userId, pageable);
 
         final String username = userRepository.findUsernameById(userId);
 
@@ -106,8 +107,8 @@ public class FollowService implements FollowUseCase {
     }
 
     @Override
-    public FollowReportDTO listFollowing(final UUID userId) {
-        final List<ActivityFollowsEntity> followingList = followRepository.findAllBySourceUserId(userId);
+    public FollowReportDTO listFollowing(final UUID userId, final Pageable pageable) {
+        final List<ActivityFollowsEntity> followingList = followRepository.findAllBySourceUserId(userId, pageable);
 
         final String username = userRepository.findUsernameById(userId);
 

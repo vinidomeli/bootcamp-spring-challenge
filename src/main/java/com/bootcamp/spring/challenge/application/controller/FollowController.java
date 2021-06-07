@@ -4,6 +4,7 @@ import com.bootcamp.spring.challenge.application.dto.follow.FollowReportDTO;
 import com.bootcamp.spring.challenge.application.dto.follow.FollowRequestDTO;
 import com.bootcamp.spring.challenge.application.dto.follow.FollowResponseDTO;
 import com.bootcamp.spring.challenge.application.usecase.FollowUseCase;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,15 +43,15 @@ public class FollowController {
     }
 
     @GetMapping("/{userId}/followers")
-    public ResponseEntity<?> listAllFollowers(@PathVariable final String userId) {
-        final FollowReportDTO response = followService.listFollowers(UUID.fromString(userId));
+    public ResponseEntity<?> listAllFollowers(final Pageable pageable, @PathVariable final UUID userId) {
+        final FollowReportDTO response = followService.listFollowers(userId, pageable);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/{userId}/following")
-    public ResponseEntity<?> listFollowing(@PathVariable final String userId) {
-        final FollowReportDTO response = followService.listFollowing(UUID.fromString(userId));
+    public ResponseEntity<?> listFollowing(final Pageable pageable, @PathVariable final UUID userId) {
+        final FollowReportDTO response = followService.listFollowing(userId, pageable);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
