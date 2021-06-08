@@ -4,6 +4,7 @@ import com.bootcamp.spring.challenge.application.dto.follow.FollowReportDTO;
 import com.bootcamp.spring.challenge.application.dto.follow.FollowRequestDTO;
 import com.bootcamp.spring.challenge.application.dto.follow.FollowResponseDTO;
 import com.bootcamp.spring.challenge.application.usecase.FollowUseCase;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
+@Tag(name = "Follow", description = "Follow user features.")
 public class FollowController {
 
     FollowUseCase followService;

@@ -3,6 +3,7 @@ package com.bootcamp.spring.challenge.application.controller;
 import com.bootcamp.spring.challenge.application.dto.user.UserRequestDTO;
 import com.bootcamp.spring.challenge.application.dto.user.UserResponseDTO;
 import com.bootcamp.spring.challenge.application.usecase.UserUseCase;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/user")
+@Tag(name = "User", description = "List and register a new user.")
 public class UserController {
 
     UserUseCase userService;

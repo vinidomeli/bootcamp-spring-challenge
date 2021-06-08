@@ -5,6 +5,7 @@ import com.bootcamp.spring.challenge.application.dto.post.PostResponseDTO;
 import com.bootcamp.spring.challenge.application.dto.post.UserPostsDTO;
 import com.bootcamp.spring.challenge.application.usecase.PostUseCase;
 import com.bootcamp.spring.challenge.domain.entity.activity.ActivityPostEntity;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/post")
+@Tag(name = "Post", description = "Publish and list your posts and from the user that you follows!")
 public class PostController {
 
     PostUseCase postService;

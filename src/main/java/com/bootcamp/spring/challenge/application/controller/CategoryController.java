@@ -3,6 +3,7 @@ package com.bootcamp.spring.challenge.application.controller;
 import com.bootcamp.spring.challenge.application.dto.category.CategoryRequestDTO;
 import com.bootcamp.spring.challenge.application.dto.category.CategoryResponseDTO;
 import com.bootcamp.spring.challenge.application.usecase.ProductCategoryUseCase;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/category")
+@Tag(name = "Category", description = "Register and list current categories!")
 public class CategoryController {
 
     ProductCategoryUseCase categoryService;

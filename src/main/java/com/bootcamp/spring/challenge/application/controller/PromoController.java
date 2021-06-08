@@ -4,6 +4,7 @@ import com.bootcamp.spring.challenge.application.dto.promo.PromoDTO;
 import com.bootcamp.spring.challenge.application.dto.promo.PromoRequestDTO;
 import com.bootcamp.spring.challenge.application.dto.promo.PromoResponseDTO;
 import com.bootcamp.spring.challenge.application.usecase.PromoUseCase;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/promo")
+@Tag(name = "Promo", description = "Create a new promo on your post and search for them.")
 public class PromoController {
 
     PromoUseCase promoService;
