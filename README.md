@@ -19,7 +19,7 @@ Run the command: `./gradlew bootRun`
 - At Windows
 Run the command: `gradlew bootRun`
 
-### 🐳 Using docker
+#### 🐳 Using docker
 Just run the command: `docker run -dp 8080:8080 vinidomeli/bootcamp-spring-challenge`
 
 ## 📦 Database architecture <a name="database"></a>
