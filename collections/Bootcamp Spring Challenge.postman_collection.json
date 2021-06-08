@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "9cf88743-216a-4fb4-94d7-7833b8309e25",
+		"name": "Bootcamp Spring Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User info by userID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user/info/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"info",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64c89716-03a5-42bc-bf31-f38fb0b6467b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User info by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user/info?username=Vinum Shop",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"info"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Vinum Shop"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Charles\",\n    \"username\": \"CH LTDA\",\n    \"type\": \"SELLER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"item": [
+				{
+					"name": "Follow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\":\"2152e287-2d9c-43c7-b3c4-d92c719dfed7\",\n    \"target\": \"64c89716-03a5-42bc-bf31-f38fb0b6467b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/follow",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\":\"593f5ffa-cc24-44a4-9589-1391b08826f4\",\n    \"target\": \"64c89716-03a5-42bc-bf31-f38fb0b6467b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/unfollow",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Total followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/:userId/followers/count",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								":userId",
+								"followers",
+								"count"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64c89716-03a5-42bc-bf31-f38fb0b6467b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List user followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/:userId/followers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								":userId",
+								"followers"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64c89716-03a5-42bc-bf31-f38fb0b6467b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List following",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/:userId/following",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								":userId",
+								"following"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64c89716-03a5-42bc-bf31-f38fb0b6467b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Register Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Saude\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/category/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Register product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64c89716-03a5-42bc-bf31-f38fb0b6467b\",\n    \"name\": \"Mouse Hyperx MXLA14\",\n    \"type\": \"NEW\",\n    \"brand\" : \"HyperX\",\n    \"color\": \"Black\",\n    \"categoryId\": 1,\n    \"notes\": \"Novo com nota fiscal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/product/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/product/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Publish a new post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "List all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "List all from following",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Promo",
+			"item": [
+				{
+					"name": "Create a new promo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/promo/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"promo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all promos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Disable promo by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/promo/disable/:promoId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"promo",
+								"disable",
+								":promoId"
+							],
+							"variable": [
+								{
+									"key": "promoId",
+									"value": "a73a829b-6fc7-4276-b282-1754906babd3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All promos given an user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/promo/user/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"promo",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "64c89716-03a5-42bc-bf31-f38fb0b6467b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Total active promos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
