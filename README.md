@@ -19,9 +19,12 @@ Run the command: `gradlew bootRun`
 This architecture was develop with a single principle to create a solid relation between the entities that we are using.
 
 ## 📰 Documentation
-All implemented endpoints are available on swagger-ui. 
+All implemented endpoints are available on swagger-ui.
+
 Running Local: `localhost:8080/swagger-ui.html`
+
 URI: `/swagger-ui.html`
+
 ![Swagger](https://user-images.githubusercontent.com/84407703/121184877-e5dca380-c83b-11eb-9d78-c6e030a38c6b.gif)
 
 ## ⚙️ Collections
