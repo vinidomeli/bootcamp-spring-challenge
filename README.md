@@ -16,11 +16,11 @@ The challenge consists on create a kind of social media that use follow features
 - At MacOS and Linux
 Run the command: `./gradlew bootRun`
 
-### Using docker
-Just run the command: `docker run -dp 8080:8080 vinidomeli/bootcamp-spring-challenge`
-
 - At Windows
 Run the command: `gradlew bootRun`
+
+### 🐳 Using docker
+Just run the command: `docker run -dp 8080:8080 vinidomeli/bootcamp-spring-challenge`
 
 ## 📦 Database architecture <a name="database"></a>
 ![spring-challenge](https://user-images.githubusercontent.com/84407703/121180890-c6dc1280-c837-11eb-8cb8-020b47e8cd96.png)
